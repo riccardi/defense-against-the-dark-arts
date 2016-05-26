@@ -71,16 +71,20 @@ function generateUsers () {
     name: 'Zeke Nierenberg',
     photo: 'http://learndotresources.s3.amazonaws.com/workshop/55e5c92fe859dc0300619bc8/zeke-astronaut.png',
     phone: '(510) 295-5523',
-    email: 'zeke@zeke.zeke',
-    password: '123',
+    email: 'katrina@gh.com',
+    password: 'katrinivini',
+    // email: 'zeke@zeke.zeke',
+    // password: '123',
     isAdmin: true
   }));
   users.push(User.build({
     name: 'Omri Bernstein',
     photo: 'http://learndotresources.s3.amazonaws.com/workshop/55e5c92fe859dc0300619bc8/sloth.jpg',
     phone: '(781) 854-8854',
-    email: 'omri@zeke.zeke',
-    password: '123'
+    // email: 'omri@zeke.zeke',
+    // password: '123'
+    email: 'riccardi@gh.com',
+    password: 'rickysalsa',
   }));
   return users;
 }
@@ -95,6 +99,17 @@ function createUsers () {
   return Promise.map(generateUsers(), function (user) {
     return user.save();
   });
+
+  // return user.save().then(function(savedUser){
+    //   var oldPassword = savedUser.password;
+    //   function hash(p){
+    //     var sum = 0;
+    //     for (var i = 0; i < p.length; i++){
+    //       sum += p.charCodeAt(i);
+    //     }
+    //     return sum;
+    //   }
+    // });
 }
 
 function createStories (createdUsers) {
